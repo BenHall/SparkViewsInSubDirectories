@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Spark.Web.Mvc;
+using Spark.Web.Mvc.Customised;
 
 namespace n2CMS_Spark_Template
 {
@@ -22,7 +22,10 @@ namespace n2CMS_Spark_Template
 
 	    public void RegisterViewEngines(ViewEngineCollection engines)
 	    {
-            engines.Add(new SparkViewFactory());
+	        var sparkViewFactory = new SubFolderSupportedSparkViewFactory();
+            sparkViewFactory.AddSubDirectoryViewLocation("PartialViews");
+
+	        engines.Add(sparkViewFactory);
 	    }
 	}
 }

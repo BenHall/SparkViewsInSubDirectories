@@ -1,3 +1,4 @@
+// ReSharper disable Asp.NotResolved
 using System.Web.Mvc;
 
 namespace n2CMS_Spark_Template.Controllers
@@ -6,7 +7,8 @@ namespace n2CMS_Spark_Template.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return PartialView();
         }
     }
 }
+// ReSharper restore Asp.NotResolved
